@@ -3,7 +3,6 @@ package com.vv.service;
 import com.vv.domain.VVItem;
 import com.vv.repository.VVRepository;
 import com.vv.request.VVItemRequest;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,13 +13,11 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class VVService {
 
-
     private final VVRepository vvRepository;
 
     public String vv() {
         return "vv";
     }
-
 
     public VVItem postItem( VVItemRequest vvItemRequest ) {
         UUID uuid = UUID.randomUUID();
