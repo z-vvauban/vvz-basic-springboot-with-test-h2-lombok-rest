@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @Builder
-@Table( name="item", schema = "vvschema")
+@Table( name="item")
 public class Item {
 
     @Id

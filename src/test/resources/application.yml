@@ -1,0 +1,12 @@
+spring:
+  # Specified for dev_env instance
+  datasource:
+    url: jdbc:h2:mem:unittest;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false;TRACE_LEVEL_FILE=4
+    name: h2
+    username: sa
+    password:
+    hikari:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
+    show_sql: true
