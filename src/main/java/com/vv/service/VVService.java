@@ -1,9 +1,8 @@
 package com.vv.service;
 
-import com.vv.domain.VVItem;
+import com.vv.domain.Item;
 import com.vv.repository.VVRepository;
 import com.vv.request.VVItemRequest;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,17 +21,17 @@ public class VVService {
     }
 
 
-    public VVItem postItem( VVItemRequest vvItemRequest ) {
+    public Item postItem( VVItemRequest vvItemRequest ) {
         UUID uuid = UUID.randomUUID();
         String uuidAsString = uuid.toString();
-        VVItem result = vvRepository.save( VVItem.builder()
-                                                 .vvId( uuidAsString )
-                                                 .name( vvItemRequest.getName() + " saved" )
-                                                 .build() );
+        Item result = vvRepository.save( Item.builder()
+                                             .vvId( uuidAsString )
+                                             .name( vvItemRequest.getName() + " saved" )
+                                             .build() );
         return result;
     }
 
-    public List<VVItem> getAll() {
+    public List<Item> getAll() {
         return vvRepository.findAll();
     }
 }

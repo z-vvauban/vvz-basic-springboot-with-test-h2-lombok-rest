@@ -1,0 +1,18 @@
+spring:
+  # Specified for dev_env instance
+  datasource:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: vvz59
+    password: vvz59
+    hikari:
+      schema: vvschema
+      maximum-pool-size: 15
+      max-lifetime: 30000
+      minimum-idle: 2
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    show_sql: true
+    properties:
+      hibernate.default_schema: vvschema

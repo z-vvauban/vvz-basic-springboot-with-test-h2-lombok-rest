@@ -1,7 +1,7 @@
 package com.vv.response;
 
 
-import com.vv.domain.VVItem;
+import com.vv.domain.Item;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,12 +15,12 @@ public class VVItemResponseTest {
                                                               .name( "abc" )
                                                               .build();
 
-        VVItem vvItem = VVItem.builder()
-                              .vvId( "1" )
-                              .name( "abc" )
-                              .build();
+        Item item = Item.builder()
+                        .vvId( "1" )
+                        .name( "abc" )
+                        .build();
 
-        VVItemResponse vvItemResponseActual = VVItemResponse.map( vvItem );
+        VVItemResponse vvItemResponseActual = VVItemResponse.map( item );
 
         assertThat( vvItemResponseActual )
                 .isEqualTo( vvItemResponseExpected );

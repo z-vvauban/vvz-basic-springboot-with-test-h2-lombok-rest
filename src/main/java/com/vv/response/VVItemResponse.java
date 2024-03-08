@@ -1,6 +1,6 @@
 package com.vv.response;
 
-import com.vv.domain.VVItem;
+import com.vv.domain.Item;
 import lombok.*;
 
 @AllArgsConstructor
@@ -12,10 +12,10 @@ public class VVItemResponse {
     private String vvId;
     private String name;
 
-    public static VVItemResponse map( VVItem vvItem ) {
+    public static VVItemResponse map( Item item ) {
         VVItemResponse result = VVItemResponse.builder()
-                                              .vvId( vvItem.getVvId() )
-                                              .name( vvItem.getName() )
+                                              .vvId( item.getVvId() )
+                                              .name( item.getName() )
                                               .build();
         return result;
     }

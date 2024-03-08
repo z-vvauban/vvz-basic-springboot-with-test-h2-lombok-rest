@@ -1,10 +1,9 @@
 package com.vv.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vv.domain.VVItem;
+import com.vv.domain.Item;
 import com.vv.repository.VVRepository;
 import com.vv.response.VVItemResponse;
-import com.vv.response.VVItemResponseTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -45,15 +44,15 @@ public class VVServiceTest {
 
     @Test
     public void getAllTest() throws Exception {
-        vvRepository.save( VVItem.builder()
-                                 .vvId( "1" )
-                                 .name( "nameA" )
-                                 .build() );
+        vvRepository.save( Item.builder()
+                               .vvId( "1" )
+                               .name( "nameA" )
+                               .build() );
 
-        vvRepository.save( VVItem.builder()
-                                 .vvId( "2" )
-                                 .name( "nameB" )
-                                 .build() );
+        vvRepository.save( Item.builder()
+                               .vvId( "2" )
+                               .name( "nameB" )
+                               .build() );
 
         int expectedResult = 2;
 
@@ -69,9 +68,9 @@ public class VVServiceTest {
     @Test
     public void postTest() throws Exception {
 
-        VVItem item = VVItem.builder()
-                            .name( "abc1" )
-                            .build();
+        Item item = Item.builder()
+                        .name( "abc1" )
+                        .build();
 
         String actual = mockMvc.perform( post( "/api/v1/vv" )
                                                  .contentType( MediaType.APPLICATION_JSON )
