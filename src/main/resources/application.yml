@@ -1,0 +1,15 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      client-id: vvthebest
+      linger-ms: 100
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer:  io.confluent.kafka.serializers.KafkaAvroSerializer
+    consumer:
+      client-id: vvthebest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    properties:
+      # default url for schema registry is localhost:8081 if it is not supplied
+      "[schema.registry.url]": http://localhost:8081

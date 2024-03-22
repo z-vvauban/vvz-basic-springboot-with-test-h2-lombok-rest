@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan("com.vv.domain")
 @EnableJpaRepositories("com.vv.repository")
+
 public class BasicSpringBootApplication {
 
 	public static void main(String[] args) {

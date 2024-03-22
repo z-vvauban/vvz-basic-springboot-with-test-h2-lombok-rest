@@ -1,0 +1,22 @@
+{
+  "name": "VVMessage",
+  "namespace": "com.vv.avro",
+  "type": "record",
+  "fields": [
+    {
+      "name": "foo",
+      "type": "string"
+    },
+    {
+      "name": "bar",
+      "type": "long"
+    },
+    {
+      "name": "wiz",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}
